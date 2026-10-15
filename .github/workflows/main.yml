@@ -39,7 +39,7 @@ jobs:
           # Latest image download karna
           sudo docker pull ${{ secrets.DOCKER_USERNAME }}/aws-dummy-app
           # Purana container delete karna ( agar phle se chl rha ho to)
-          sudo docker rm -f aws-dummy-app || true
+          sudo docker rm -f aws-dummy-cont || true
           # Naye container ko port 80 pr run krna
           sudo docker run -d --restart unless-stopped --name aws-dummy-cont -p 80:5000 ${{ secrets.DOCKER_USERNAME }}/aws-dummy-app
           
