@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+# Container 1: Database
+  db:
+    image: postgres:15-alpine
+    container_name: taskforage-db
+    environment:
+      POSTGRES_USER: taskuser
+      POSTGRES_PASSWORD: taskpassword
+      POSTGRES_DB: taskdb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+# Container 2: Frontend + Backend (flask)   
+  web:
+    build:
+      context: .
+    container_name: taskforage-web
+    ports:
+      - "5000:5000" 
+    environment:
+      DATABASE_URL: postgresql://taskuser:taskpassword@db:5432/taskdb
+    depends_on:
+      - db
+volumes:
+  postgres_data:
