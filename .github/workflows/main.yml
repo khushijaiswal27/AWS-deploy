@@ -32,5 +32,14 @@ jobs:
       uses: appleboy/ssh-action@v1.2.0
       with:
         host: ${{ secrets.EC2_HOST }}
-        username: ${{ secrets.EC2_USERNAME}}
+        username: ${{ secrets.EC2_USERNAME }}
         key: ${{ secrets.EC2_SSH_KEY }}
+        port: 22
+        script: |
+          # Latest image download karna
+          sudo docker pull ${{ secrets.DOCKER_USERNAME }}/ aws-dummy-app
+          # Purana container delete karna ( agar phle se chl rha ho to)
+          sudo docker rm -f aws-dummy-app || true
+          # Naye container ko port 80 pr run krna
+          sudo docker run -d --restart unless-stopped --name aws-dummy-cont -p 80:5000 ${{ secrets.DOCKER_USERNAME }}/aws-dummy-app
+          
