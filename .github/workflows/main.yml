@@ -26,7 +26,7 @@ jobs:
     # 4. Us Docker Image ko Docker Hub pr upload krna
     - name: Push App Image
       run: |
-         docker push ${{ secrets.DOCKER_USERNAME }}/aws-dummy-app
+         docker push ${{ secrets.DOCKER_USERNAME }}/aws-dummy-app:latest
     # 5. AWS EC2 login krke project ko chalana
     - name: Deploy app to EC2
       uses: appleboy/ssh-action@v1.2.0
