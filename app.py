@@ -30,8 +30,8 @@ class Task(db.Model):
         }
 
 # Table creation on startup
-with app.app_context():
-    db.create_all()
+# with app.app_context():
+#     db.create_all()
 
 APP_VERSION = "v1.0.0-postgres"
 
