@@ -12,7 +12,7 @@ jobs:
 
     steps:
     # Step 1: GitHub repository se code ko temporary runner par copy karna
-    - name: Checkout code
+    - name: Checkout code 
       uses: actions/checkout@v4
     # Step 2:  Setup python enviornment
     - name: Set up python
