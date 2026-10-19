@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main # jab main branch pe push honga tbhi ye active hongi
+workflow_dispatch: # 👈 Yeh line jod do
   schedule:
     - cron: '*/5 * * * *'
 
