@@ -1,4 +1,4 @@
-name: Dummy-python-proj
+name: Dummy-python-proj-main
 
 on:
   push:
