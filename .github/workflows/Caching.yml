@@ -1,4 +1,4 @@
-name: Dummy-python-proj
+name: Dummy-python-proj-cache
 
 # Trigger: Jab bhi 'main' branch par push hoga, pipeline chalegi
 on:
