@@ -1,5 +1,5 @@
 
-name: Dummy-python-proj-main
+name: Dummy-python-proj-artifact
 
 on:
   push:
