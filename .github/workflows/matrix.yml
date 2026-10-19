@@ -1,4 +1,4 @@
-name: Dummy-python-proj
+name: Dummy-python-proj-matrix
 # Trigger: Jab 'matrix' branch par push hoga tabhi ye active hogi
 on:
   push:
