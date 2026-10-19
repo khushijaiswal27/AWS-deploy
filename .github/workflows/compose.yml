@@ -3,7 +3,7 @@ name: Dummy-python-proj-main
 on:
   push:
     branches:
-      - demo
+      - jaya
       
   workflow_dispatch: # 👈 Yeh line jod do
 
