@@ -4,7 +4,8 @@ on:
   push:
     branches:
       - khushi
-workflow_dispatch: # 👈 Yeh line jod do
+      
+  workflow_dispatch: # 👈 Yeh line jod do
 
 jobs:
   deploy:
