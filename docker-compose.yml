@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-# Container 1: Database
+# Container 1: PostgreSQL Database layer
   db:
     image: postgres:15-alpine
     container_name: taskforage-db
@@ -13,17 +13,28 @@ services:
       - postgres_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+    networks:
+      - task-network
 
-# Container 2: Frontend + Backend (flask)   
+# Container 2: Frontend + Backend (flask Application)   
   web:
-    build:
-      context: .
+    # build:
+    #   context: .
+    imae: kusijaiswal27/aws-dummy-app:latest # 🚀 Local Build hatakar direct aapki Docker Hub image connect kar di!
     container_name: taskforage-web
     ports:
-      - "5000:5000" 
+      - "80:5000" # 🚀 AWS ka default Port 80 ab seedhe backend ke port 5000 par map ho gaya
     environment:
-      DATABASE_URL: postgresql://taskuser:taskpassword@db:5432/taskdb
+      DATABASE_URL: postgresql://taskuser:taskpassword@db:5432/taskdb # Host me 'localhost' ki jagah 'db' link hai
     depends_on:
-      - db
+      - db # Jab tak database completely active nahi hoga, tab tak web app start nahi hoga
+    networks:
+      - task-network
+
+# Network aur Storage Data Volumes Setup
+networks:
+  task-network:
+    driver: bridge
+
 volumes:
   postgres_data:
