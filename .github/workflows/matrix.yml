@@ -12,7 +12,7 @@ jobs:
     # Matrix Definination block ; ye github ko 2 parller windows chalane ko bolta hai
     strategy:
       matrix:
-        python-version: ['3.10', '3.11'] # ek sath 2 alag versions test honge
+        image-tag: ['latest', 'stable'] # Ek sath do alag tags ki image test hongi
 
     steps:
     # 1. Github repo se code copy krna
