@@ -5,7 +5,10 @@ on:
   push:
     branches:
       - shruti
+      
+  workflow_dispatch: # 👈 Isko bilkul 'push' aur 'schedule' ki vertical alignment me le aao!
 
+  
 jobs:
   deploy:
     runs-on: ubuntu-latest # GitHub Actions ka temporary Linux server
