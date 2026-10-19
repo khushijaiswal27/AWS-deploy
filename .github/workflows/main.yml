@@ -3,7 +3,7 @@ name: Dummy-python-proj
 on:
   push:
     branches:
-      - Cron
+      - demo
 
 jobs:
   deploy:
