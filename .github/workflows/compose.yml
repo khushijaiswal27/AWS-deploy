@@ -1,4 +1,4 @@
-name: 05-Docker-Compose-FullStack
+name: dummy-python-proj-full-deploonAWS
 
 on:
   push:
