@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - jaya # 🚀 Target branch set to jaya
-  workflow_dispatch: # 🎛️ Manual Run switch active
+  workflow_dispatch: # 🎛️ Manual Run switch active 
 
 jobs:
   deploy:
