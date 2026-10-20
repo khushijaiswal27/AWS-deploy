@@ -46,5 +46,5 @@ jobs:
           # GitHub se seedha jaya branch ki compose file download karna
           sudo wget https://githubusercontent.com{{ github.repository }}/jaya/docker-compose.yml
           
-          sudo docker compose pull
-          sudo docker compose up -d --remove-orphans
+          sudo docker-compose pull
+          sudo docker-compose up -d --remove-orphans
