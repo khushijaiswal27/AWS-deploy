@@ -50,7 +50,7 @@ jobs:
           sudo docker compose up -d --remove-orphans
     # Automated github release step ( deployment pass hone k bad release banana)
     - name: create Automated Production Release
-      uses: action/create-release@v1
+      uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # github ka secret inbuilt token
       with:
