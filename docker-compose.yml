@@ -1,29 +1,12 @@
 version: '3.8'
 
 services:
-# Container 1: Database
-  db:
-    image: postgres:15-alpine
-    container_name: taskforage-db
-    environment:
-      POSTGRES_USER: taskuser
-      POSTGRES_PASSWORD: taskpassword
-      POSTGRES_DB: taskdb
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
-
-# Container 2: Frontend + Backend (flask)   
+  # 🌐 Only Frontend + Backend application container layer active
   web:
-    build:
-      context: .
+    image: khushijaiswal27/aws-dummy-app:latest
     container_name: taskforage-web
     ports:
-      - "5000:5000" 
+      - "80:5000" # Maps to Standard public port 80
     environment:
-      DATABASE_URL: postgresql://taskuser:taskpassword@db:5432/taskdb
-    depends_on:
-      - db
-volumes:
-  postgres_data:
+      # 🚀 THE AWS RDS MAGIC CONNECT LINK:
+      - DATABASE_URL=postgresql://${{ secrets.RDS_USER }}:${{ secrets.RDS_PASS }}@${{ secrets.RDS_ENDPOINT }}:5432/${{ secrets.RDS_DB_NAME }}
