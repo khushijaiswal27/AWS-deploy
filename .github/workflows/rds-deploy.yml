@@ -1,0 +1,6 @@
+name: AWS-RDS-FullStack-Deployment
+
+on:
+  push:
+    branches:
+      - RDS-Branch # 🚀 Unique branch for AWS RDS testing
